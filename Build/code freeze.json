@@ -1,0 +1,9 @@
+{
+"TOTAL_MEMORY": 268435456,
+"dataUrl": "code freeze.data.unityweb",
+"asmCodeUrl": "code freeze.asm.code.unityweb",
+"asmMemoryUrl": "code freeze.asm.memory.unityweb",
+"asmFrameworkUrl": "code freeze.asm.framework.unityweb",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}
