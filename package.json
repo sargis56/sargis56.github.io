@@ -1,0 +1,23 @@
+{
+  "name": "sargis56.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages - d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sargis56/sargis56.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sargis56/sargis56.github.io/issues"
+  },
+  "homepage": "https://github.com/sargis56/sargis56.github.io/Portfolio",
+  "dependencies": {
+    "gh-pages": "^2.2.0"
+  }
+}
