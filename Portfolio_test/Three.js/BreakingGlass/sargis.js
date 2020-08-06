@@ -2,8 +2,8 @@
 //Physijs.scripts.worker = '../libs/other/physijs/physijs_worker.js';
 //Physijs.scripts.ammo = './ammo.js';
 
-Physijs.scripts.worker = 'js/libs/other/physijs_worker.js';
-Physijs.scripts.ammo = 'js/libs/other/ammo.js';
+Physijs.scripts.worker = '/libs/other/physijs_worker.js';
+Physijs.scripts.ammo = 'ammo.js';
 
 var scene = new Physijs.Scene();
 const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1.0, 1000);
