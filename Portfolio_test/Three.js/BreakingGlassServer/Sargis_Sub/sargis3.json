@@ -1,0 +1,134 @@
+{
+	"metadata": {
+		"version": 4.3,
+		"type": "Object",
+		"generator": "ObjectExporter",
+		"numOfItems": 6,
+		"numOfBlueBoxs": 2
+	},
+	"geometries": [
+		{
+			"type": "BoxGeometry",
+			"data": {
+				"attributes": {
+					"position": {
+						"itemSize": 3,
+						"type": "Float32Array",
+						"array": [0,10,0]
+					},
+					"shape": {
+						"itemSize": 3,
+						"type": "Float32Array",
+						"array": [10,10,10]
+					}
+					}
+				}
+		},
+		{
+			"type": "BoxGeometry",
+			"data": {
+				"attributes": {
+					"position": {
+						"itemSize": 3,
+						"type": "Float32Array",
+						"array": [15,10,0]
+					},
+					"shape": {
+						"itemSize": 3,
+						"type": "Float32Array",
+						"array": [10,10,10]
+					}
+					}
+				}
+		},
+		{
+			"type": "BoxGeometry",
+			"data": {
+				"attributes": {
+					"position": {
+						"itemSize": 3,
+						"type": "Float32Array",
+						"array": [7.5,25,0]
+					},
+					"shape": {
+						"itemSize": 3,
+						"type": "Float32Array",
+						"array": [10,10,10]
+					}
+					}
+				}
+		},
+		{
+			"type": "BoxGeometry",
+			"data": {
+				"attributes": {
+					"position": {
+						"itemSize": 3,
+						"type": "Float32Array",
+						"array": [7.5,65,10]
+					},
+					"shape": {
+						"itemSize": 3,
+						"type": "Float32Array",
+						"array": [10,10,10]
+					}
+					}
+				}
+		},
+		{
+			"type": "BoxGeometry",
+			"data": {
+				"attributes": {
+					"position": {
+						"itemSize": 3,
+						"type": "Float32Array",
+						"array": [7.5,55,0]
+					},
+					"shape": {
+						"itemSize": 3,
+						"type": "Float32Array",
+						"array": [10,10,10]
+					}
+					}
+				}
+		},
+		{
+			"type": "BoxGeometry",
+			"data": {
+				"attributes": {
+					"position": {
+						"itemSize": 3,
+						"type": "Float32Array",
+						"array": [7.5,85,0]
+					},
+					"shape": {
+						"itemSize": 3,
+						"type": "Float32Array",
+						"array": [10,10,10]
+					}
+					}
+				}
+		}
+		
+	],
+	"materials": [
+		{
+			"color": "blue"
+		},
+		{
+			"color": "red"
+		},
+		{
+			"color": "yellow"
+		},
+		{
+			"color": "red"
+		},
+		{
+			"color": "blue"
+		},
+		{
+			"color": "red"
+		}
+	]
+}
