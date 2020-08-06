@@ -2,7 +2,7 @@
 //Physijs.scripts.worker = '../libs/other/physijs/physijs_worker.js';
 //Physijs.scripts.ammo = './ammo.js';
 
-Physijs.scripts.worker = '/libs/other/physijs_worker.js';
+Physijs.scripts.worker = 'BreakingGlass/libs/other/physijs_worker.js';
 Physijs.scripts.ammo = 'ammo.js';
 
 var scene = new Physijs.Scene();
