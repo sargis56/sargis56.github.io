@@ -1,25 +1,132 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | OneBoneGame</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
-    <script src="TemplateData/UnityProgress.js"></script>  
-    <script src="Build/UnityLoader.js"></script>
-    <script>
-      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Final Polish 2.json", {onProgress: UnityProgress});
-    </script>
-  </head>
-  <body>
-    <div class="webgl-content">
-      <div id="gameContainer" style="width: 960px; height: 600px"></div>
-      <div class="footer">
-        <div class="webgl-logo"></div>
-        <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
-        <div class="title">OneBoneGame</div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sargis Nahapetyan | Software Engineer & AI Enthusiast</title>
+  <meta name="description" content="Personal website of Sargis Nahapetyan, software engineer and AI enthusiast based in Toronto, Ontario." />
+  <meta name="keywords" content="Sargis Nahapetyan, software engineer, AI, game developer, Toronto" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Sargis Nahapetyan" />
+  <meta property="og:description" content="Personal website of Sargis Nahapetyan" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sargis56.github.io/" />
+  <link rel="canonical" href="https://sargis56.github.io/" />
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sargis Nahapetyan",
+    "url": "https://sargis56.github.io/",
+    "sameAs": [
+      "https://www.linkedin.com/in/sargis-nahapetyan",
+      "https://github.com/sargis56"
+    ],
+    "jobTitle": "Software Engineer",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Toronto",
+      "addressRegion": "ON",
+      "addressCountry": "Canada"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>Sargis Nahapetyan</h1>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button id="theme-toggle" aria-label="Toggle theme">☾</button>
+    </nav>
+  </header>
+
+  <section id="hero">
+    <div class="hero-content">
+      <img src="https://via.placeholder.com/150" alt="Sargis Nahapetyan headshot" id="profile-photo">
+      <h2>Software Engineer &amp; AI Enthusiast</h2>
+      <p>Final-year student at Seneca Polytechnic, passionate about creating innovative software.</p>
+      <a href="#contact" class="btn">Get in Touch</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I am a top student in Computer Science from Humber College with a 92% GPA, now completing my Bachelor's degree through a joint program at Seneca. I have strong experience in generative AI and game development and have led teams to deliver projects on tight deadlines.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <img src="https://via.placeholder.com/600x400" alt="Indie Game Recommender">
+        <div>
+          <h3>Indie Game Recommender</h3>
+          <p>LLM chatbot that recommends indie games using Retrieval Augmented Generation and a Postgres embeddings database.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/600x400" alt="Fake News Detector">
+        <div>
+          <h3>Fake News Detector</h3>
+          <p>Fine-tuned transformer model to distinguish reliable articles from misinformation. Hosted on Hugging Face.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/600x400" alt="Hobby Logo Detector">
+        <div>
+          <h3>Hobby Logo Detector</h3>
+          <p>Computer vision web app built with DenseNet121 to classify symbols from the Warhammer franchise.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/600x400" alt="WOE Game">
+        <div>
+          <h3>WOE</h3>
+          <p>Networked multiplayer horror survival game developed in Unity with AI monsters and puzzles.</p>
+        </div>
       </div>
     </div>
-  </body>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="experience-item">
+      <h3>Software Sales Intern – Prolyncs Inc.</h3>
+      <p>Jan 2025 – Present – Maintained CRM records, developed sales collateral, and organized product demonstrations.</p>
+    </div>
+    <div class="experience-item">
+      <h3>Software Engineer Intern – Niche Protocol Inc.</h3>
+      <p>Dec 2023 – Apr 2024 – Built an LLM-based onboarding chatbot and shipped new features for iOS.</p>
+    </div>
+    <div class="experience-item">
+      <h3>Software Developer Intern – Asclepius Snakebite Foundation</h3>
+      <p>May 2023 – Aug 2023 – Developed a story-driven educational visual novel using Python and open-source frameworks.</p>
+    </div>
+    <div class="experience-item">
+      <h3>Teaching Assistant &amp; Tutor – Humber College</h3>
+      <p>Sept 2020 – May 2023 – Supported courses in math, physics, graphics, and game engines while tutoring students.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:sargis@live.ca">sargis@live.ca</a></p>
+    <p>Phone: <a href="tel:+14169301609">416-930-1609</a></p>
+    <p><a href="https://www.linkedin.com/in/sargis-nahapetyan">LinkedIn</a> | <a href="https://github.com/sargis56">GitHub</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Sargis Nahapetyan</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
