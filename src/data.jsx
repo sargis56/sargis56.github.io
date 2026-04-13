@@ -259,7 +259,7 @@ const MODS = [
   { game: "Garry's Mod", title: "[CW 2.0] Cases", subs: 62811, kind: "Storage entities", href: "https://steamcommunity.com/sharedfiles/filedetails/?id=713125469" },
   { game: "Garry's Mod", title: "[CW 2.0] Sci-Fi Aug", subs: 50085, kind: "Weapon", href: "https://steamcommunity.com/sharedfiles/filedetails/?id=689675000" },
   { game: "Garry's Mod", title: "[CW 2.0] Sci-Fi Pistol", subs: 35906, kind: "Weapon", href: "https://steamcommunity.com/sharedfiles/filedetails/?id=730880014" },
-  { game: "PVK II", title: "Gothic Knight", subs: 4069, kind: "Character model" },
+  { game: "PVK II", title: "Gothic Knight", subs: 4069, kind: "Character model", href: "https://steamcommunity.com/sharedfiles/filedetails/?id=832107248" },
   { game: "PVK II", title: "Mang in Graz De Luxe", subs: 3910, kind: "Weapon", href: "https://steamcommunity.com/sharedfiles/filedetails/?id=787706442" },
   { game: "PVK II", title: "Steel Arming Sword", subs: 1174, kind: "Weapon", href: "https://steamcommunity.com/sharedfiles/filedetails/?id=787748653" },
 ];
