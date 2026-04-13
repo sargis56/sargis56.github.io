@@ -182,6 +182,20 @@ const PROJECTS = [
     ],
   },
   {
+    id: "addiction-paper",
+    title: "Causes & Effects of Video Game Addiction",
+    tagline: "28-page peer-reviewed research paper",
+    tags: ["research"],
+    role: "Author · Seneca Capstone",
+    tech: ["Academic research"],
+    links: { paper: "https://example.com/REPLACE-ME" }, // TODO: Google Site URL
+    bullets: [
+      "Two-year study into which game mechanics drive compulsive play in teens and young adults",
+      "Synthesised academic journals, screen-time data, and gambling-addiction literature",
+      "Peer-reviewed by Prof. Jeffrey D. Lloyd (Arts & Science) and program coordinator Prof. Taunya Tremblay",
+    ],
+  },
+  {
     id: "jams",
     title: "Game Jams",
     tagline: "Four jam games built under pressure",
@@ -297,7 +311,7 @@ const EXPERIENCE = [
 
 const EDUCATION = [
   { school: "Seneca Polytechnic", cred: "Hons. Bachelor, Interdisciplinary Studies", when: "2023–2025" },
-  { school: "Humber College", cred: "Adv. Diploma, CS · Game Programming", when: "2020–2023" },
+  { school: "Humber College", cred: "Adv. Diploma, CS · Game Programming", when: "2020–2023", note: "4.0 GPA · top of program" },
   { school: "Centennial College", cred: "Adv. Diploma, Game Programming", when: "2016–2019" },
 ];
 

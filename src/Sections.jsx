@@ -122,7 +122,11 @@ a.stat .stat-label::after { content: ' →'; color: var(--accent); }
 .edu-row { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; font-size: 14px; }
 .edu-school { font-weight: 600; }
 .edu-cred { color: var(--fg-dim); }
-.edu-when { font: 500 12px var(--font-mono); color: var(--fg-faint); }
+.edu-note {
+  margin-top: 4px; font: 500 12px var(--font-mono);
+  color: var(--accent); letter-spacing: 0.02em;
+}
+.edu-when { font: 500 12px var(--font-mono); color: var(--fg-faint); white-space: nowrap; }
 
 /* ── Contact ────────────────────────────────────────────── */
 .contact {
@@ -261,6 +265,7 @@ function About() {
               <div>
                 <div className="edu-school">{e.school}</div>
                 <div className="edu-cred">{e.cred}</div>
+                {e.note && <div className="edu-note">{e.note}</div>}
               </div>
               <div className="edu-when">{e.when}</div>
             </div>

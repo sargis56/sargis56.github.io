@@ -185,7 +185,7 @@ const projectStyles = `
 
 const LINK_LABELS = {
   steam: 'Steam', itch: 'itch.io', hf: 'Hugging Face',
-  github: 'GitHub', live: 'Live demo', site: 'Read it',
+  github: 'GitHub', live: 'Live demo', site: 'Website', paper: 'Read the paper',
 };
 
 function Media({ project, cls, focus }) {
