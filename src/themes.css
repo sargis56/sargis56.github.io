@@ -1,0 +1,229 @@
+/* ───────────────────────────────────────────────────────────
+   Base + 3 themes for Sargis portfolio
+   Themes set CSS vars; components only consume vars.
+   ─────────────────────────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500;700&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  transition: background .4s ease, color .4s ease;
+}
+::selection { background: var(--accent); color: var(--bg); }
+
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+
+/* ─── Theme: ENGINE (default) ────────────────────────────── */
+:root,
+[data-theme="engine"] {
+  --bg:        oklch(16% 0.012 250);
+  --bg-2:      oklch(20% 0.014 250);
+  --bg-3:      oklch(25% 0.016 250);
+  --fg:        oklch(94% 0.008 80);
+  --fg-dim:    oklch(70% 0.01 250);
+  --fg-faint:  oklch(45% 0.01 250);
+  --line:      oklch(32% 0.012 250);
+  --accent:    oklch(72% 0.17 var(--accent-hue, 55));   /* amber */
+  --accent-2:  oklch(72% 0.17 calc(var(--accent-hue, 55) + 140)); /* teal counterpart */
+  --radius:    10px;
+  --radius-lg: 18px;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body:    'Space Grotesk', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+  --shadow:    0 10px 40px -10px oklch(0% 0 0 / 0.5);
+  --texture-opacity: 0.5;
+}
+
+/* ─── Theme: SIGNAL ──────────────────────────────────────── */
+[data-theme="signal"] {
+  --bg:        oklch(14% 0.04 290);
+  --bg-2:      oklch(19% 0.05 290);
+  --bg-3:      oklch(25% 0.06 290);
+  --fg:        oklch(96% 0.01 290);
+  --fg-dim:    oklch(75% 0.04 290);
+  --fg-faint:  oklch(50% 0.04 290);
+  --line:      oklch(35% 0.06 290);
+  --accent:    oklch(75% 0.22 var(--accent-hue, 340));  /* magenta */
+  --accent-2:  oklch(75% 0.22 calc(var(--accent-hue, 340) - 150)); /* cyan */
+  --radius:    6px;
+  --radius-lg: 12px;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body:    'Space Grotesk', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+  --shadow:    0 0 30px -5px var(--accent), 0 10px 40px -10px oklch(0% 0 0 / 0.6);
+  --texture-opacity: 0.35;
+}
+
+/* ─── Theme: PRINT ───────────────────────────────────────── */
+[data-theme="print"] {
+  --bg:        oklch(97% 0.008 80);
+  --bg-2:      oklch(94% 0.01 80);
+  --bg-3:      oklch(90% 0.012 80);
+  --fg:        oklch(20% 0.01 60);
+  --fg-dim:    oklch(45% 0.01 60);
+  --fg-faint:  oklch(60% 0.01 60);
+  --line:      oklch(85% 0.01 80);
+  --accent:    oklch(52% 0.16 var(--accent-hue, 30));   /* rust */
+  --accent-2:  oklch(52% 0.16 var(--accent-hue, 30));
+  --radius:    4px;
+  --radius-lg: 8px;
+  --font-display: 'Instrument Serif', serif;
+  --font-body:    'IBM Plex Sans', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+  --shadow:    0 8px 30px -12px oklch(30% 0.02 60 / 0.25);
+  --texture-opacity: 0;
+}
+
+/* ─── Background textures ────────────────────────────────── */
+.bg-texture {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  opacity: var(--texture-opacity);
+  transition: opacity .4s ease;
+}
+[data-theme="engine"] .bg-texture {
+  background-image: radial-gradient(circle at 1px 1px, var(--line) 1px, transparent 0);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 70%);
+}
+[data-theme="signal"] .bg-texture {
+  background:
+    repeating-linear-gradient(0deg, transparent 0 3px, oklch(100% 0 0 / 0.04) 3px 4px),
+    radial-gradient(ellipse 120% 80% at 50% -10%, var(--bg-3), transparent 60%);
+}
+[data-theme="print"] .bg-texture { display: none; }
+
+/* ─── Layout primitives ──────────────────────────────────── */
+.shell { position: relative; z-index: 1; }
+.wrap  { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+@media (max-width: 720px) { .wrap { padding: 0 20px; } }
+
+section { padding: 110px 0; position: relative; scroll-margin-top: -30px; }
+.anchor { display: block; height: 0; scroll-margin-top: 96px; }
+
+.section-head {
+  display: flex; align-items: baseline; gap: 18px;
+  margin-bottom: 48px;
+}
+.section-kicker {
+  font: 500 12px/1 var(--font-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.section-title {
+  font: 500 clamp(32px, 5vw, 54px)/1.05 var(--font-display);
+  letter-spacing: -0.01em;
+}
+[data-theme="print"] .section-title { font-weight: 400; font-style: italic; }
+.section-sub { color: var(--fg-dim); max-width: 60ch; margin-top: 8px; }
+.rule { height: 1px; background: var(--line); flex: 1; align-self: center; }
+
+/* ─── Nav ────────────────────────────────────────────────── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  backdrop-filter: blur(14px);
+  background: color-mix(in oklch, var(--bg) 75%, transparent);
+  border-bottom: 1px solid var(--line);
+}
+.nav-inner {
+  max-width: 1280px; margin: 0 auto; padding: 16px 32px;
+  display: flex; align-items: center; gap: 28px;
+}
+.nav-logo { font: 600 16px var(--font-mono); letter-spacing: 0.04em; }
+.nav-logo .caret { color: var(--accent); }
+.nav-links { display: flex; gap: 22px; margin-left: auto; }
+.nav-links a {
+  font: 500 13px var(--font-mono); color: var(--fg-dim);
+  text-transform: uppercase; letter-spacing: 0.08em;
+  transition: color .15s;
+}
+.nav-links a:hover { color: var(--accent); }
+.nav-cta {
+  padding: 9px 16px; border: 1px solid var(--line);
+  border-radius: var(--radius); font: 500 13px var(--font-mono);
+  white-space: nowrap; transition: all .15s;
+}
+.nav-cta:hover { border-color: var(--accent); color: var(--accent); }
+@media (max-width: 860px) { .nav-links { display: none; } }
+
+/* ─── Buttons & chips ────────────────────────────────────── */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 13px 22px; border-radius: var(--radius);
+  font: 500 14px var(--font-mono); letter-spacing: 0.02em;
+  border: 1px solid var(--line); white-space: nowrap;
+  transition: all .15s ease;
+}
+.btn:hover { transform: translateY(-2px); border-color: var(--accent); }
+.btn-primary { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+.btn-primary:hover { filter: brightness(1.1); }
+[data-theme="signal"] .btn-primary { box-shadow: 0 0 24px -4px var(--accent); }
+
+.chip {
+  display: inline-flex; align-items: center;
+  padding: 5px 11px; border-radius: 999px;
+  font: 500 11px/1 var(--font-mono);
+  background: var(--bg-3); color: var(--fg-dim);
+  border: 1px solid var(--line);
+  letter-spacing: 0.02em; white-space: nowrap;
+}
+.chip-accent { color: var(--accent); border-color: color-mix(in oklch, var(--accent) 40%, var(--line)); }
+
+/* ─── Media placeholder ──────────────────────────────────── */
+.ph {
+  position: relative; overflow: hidden;
+  background:
+    repeating-linear-gradient(-45deg,
+      var(--bg-2) 0 12px,
+      var(--bg-3) 12px 13px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  display: grid; place-items: center;
+}
+.ph-label {
+  font: 500 11px var(--font-mono);
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--fg-faint);
+  background: var(--bg);
+  padding: 6px 10px; border-radius: 4px;
+  border: 1px solid var(--line);
+}
+
+/* ─── Utility ────────────────────────────────────────────── */
+.mono { font-family: var(--font-mono); }
+.dim  { color: var(--fg-dim); }
+.faint{ color: var(--fg-faint); }
+.accent { color: var(--accent); }
+.accent-2 { color: var(--accent-2); }
+
+/* ─── Scrollbar (dark themes) ────────────────────────────── */
+[data-theme="engine"] ::-webkit-scrollbar,
+[data-theme="signal"] ::-webkit-scrollbar { width: 10px; height: 10px; }
+[data-theme="engine"] ::-webkit-scrollbar-thumb,
+[data-theme="signal"] ::-webkit-scrollbar-thumb { background: var(--bg-3); border-radius: 5px; }
+[data-theme="engine"] ::-webkit-scrollbar-track,
+[data-theme="signal"] ::-webkit-scrollbar-track { background: var(--bg); }
+
+/* ─── Keyframes ──────────────────────────────────────────── */
+@keyframes float {
+  0%,100% { transform: translateY(0) }
+  50%     { transform: translateY(-10px) }
+}
+@keyframes blink { 0%,49%{opacity:1} 50%,100%{opacity:0} }
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px) }
+  to   { opacity: 1; transform: translateY(0) }
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(24px) scale(.98) }
+  to   { opacity: 1; transform: translateY(0)   scale(1) }
+}
+@keyframes backdropIn { from { opacity: 0 } to { opacity: 1 } }
