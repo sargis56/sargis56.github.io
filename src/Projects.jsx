@@ -149,7 +149,7 @@ const projectStyles = `
   padding: 40px; cursor: zoom-out; animation: backdropIn .15s ease both;
 }
 .lightbox img {
-  max-width: 100%; max-height: 100%; object-fit: contain;
+  max-width: calc(100vw - 80px); max-height: calc(100vh - 80px); object-fit: contain;
   border-radius: 4px; cursor: zoom-out;
 }
 .lightbox-close {
