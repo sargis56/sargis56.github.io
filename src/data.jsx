@@ -9,9 +9,8 @@ const PROFILE = {
   email: "nahapetyansargis@gmail.com",
   phone: "416-930-1609",
   links: {
-    github: "#",
-    linkedin: "#",
-    resume: "uploads/resume.pdf",
+    linkedin: "https://www.linkedin.com/in/sargis-n/",
+    resume: "resume.html",
   },
   bio: "I build games and the systems that make them tick: engines, graphics, gameplay AI. Lately I've been pulling modern machine learning into that work too. I've led a 40-person student team to ship a game on Steam, put LLM products in front of thousands of users, and written a graphics engine from scratch. Now I'm looking for a studio where I can ship ambitious things.",
 };
@@ -242,12 +241,12 @@ const MODS_TOTAL = 54;
 const MODS_WORKSHOP_URL = "#"; // TODO: Sargis's Steam Workshop profile URL
 
 const MODS = [
-  { game: "Garry's Mod", title: "[CW 2.0] Cases", subs: 62811, kind: "Storage entities" },
-  { game: "Garry's Mod", title: "[CW 2.0] Sci-Fi Aug", subs: 50085, kind: "Weapon" },
-  { game: "Garry's Mod", title: "[CW 2.0] Sci-Fi Pistol", subs: 35906, kind: "Weapon" },
+  { game: "Garry's Mod", title: "[CW 2.0] Cases", subs: 62811, kind: "Storage entities", href: "https://steamcommunity.com/sharedfiles/filedetails/?id=713125469" },
+  { game: "Garry's Mod", title: "[CW 2.0] Sci-Fi Aug", subs: 50085, kind: "Weapon", href: "https://steamcommunity.com/sharedfiles/filedetails/?id=689675000" },
+  { game: "Garry's Mod", title: "[CW 2.0] Sci-Fi Pistol", subs: 35906, kind: "Weapon", href: "https://steamcommunity.com/sharedfiles/filedetails/?id=730880014" },
   { game: "PVK II", title: "Gothic Knight", subs: 4069, kind: "Character model" },
-  { game: "PVK II", title: "Mang in Graz De Luxe", subs: 3910, kind: "Weapon" },
-  { game: "PVK II", title: "Steel Arming Sword", subs: 1174, kind: "Weapon" },
+  { game: "PVK II", title: "Mang in Graz De Luxe", subs: 3910, kind: "Weapon", href: "https://steamcommunity.com/sharedfiles/filedetails/?id=787706442" },
+  { game: "PVK II", title: "Steel Arming Sword", subs: 1174, kind: "Weapon", href: "https://steamcommunity.com/sharedfiles/filedetails/?id=787748653" },
 ];
 
 const EXPERIENCE = [

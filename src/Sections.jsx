@@ -228,16 +228,19 @@ function Workshop() {
         )}
       </div>
       <div className="mods-grid">
-        {MODS.map((m, i) => (
-          <div key={i} className="mod">
-            <div className="mod-ico">{m.game === "Garry's Mod" ? 'GMOD' : 'PVK'}</div>
-            <div className="mod-body">
-              <div className="mod-title">{m.title}</div>
-              <div className="mod-kind">{m.kind} · {m.game}</div>
-            </div>
-            <div className="mod-subs">{fmt(m.subs)}<span>SUBS</span></div>
-          </div>
-        ))}
+        {MODS.map((m, i) => {
+          const Tag = m.href ? 'a' : 'div';
+          return (
+            <Tag key={i} className="mod" href={m.href} target={m.href ? '_blank' : undefined} rel={m.href ? 'noopener' : undefined}>
+              <div className="mod-ico">{m.game === "Garry's Mod" ? 'GMOD' : 'PVK'}</div>
+              <div className="mod-body">
+                <div className="mod-title">{m.title}</div>
+                <div className="mod-kind">{m.kind} · {m.game}</div>
+              </div>
+              <div className="mod-subs">{fmt(m.subs)}<span>SUBS</span></div>
+            </Tag>
+          );
+        })}
       </div>
     </>
   );
@@ -276,10 +279,9 @@ function Contact() {
         <p className="contact-sub">Open to game programming and applied-AI roles. Toronto-based, remote-friendly.</p>
         <div className="contact-ctas">
           <a className="btn btn-primary" href={'mailto:' + PROFILE.email}>Email me</a>
-          <a className="btn" href={PROFILE.links.resume} target="_blank">Download resume</a>
+          <a className="btn" href={PROFILE.links.resume} target="_blank">Resume</a>
         </div>
         <div className="contact-links">
-          <a href={PROFILE.links.github}>GitHub</a>
           <a href={PROFILE.links.linkedin}>LinkedIn</a>
           <a href={'mailto:' + PROFILE.email}>{PROFILE.email}</a>
         </div>
