@@ -11,7 +11,7 @@ const PROFILE = {
   links: {
     github: "#",
     linkedin: "#",
-    resume: "uploads/Sargis Nahapetyan Resume.pdf",
+    resume: "uploads/resume.pdf",
   },
   bio: "I build games and the systems that make them tick: engines, graphics, gameplay AI. Lately I've been pulling modern machine learning into that work too. I've led a 40-person student team to ship a game on Steam, put LLM products in front of thousands of users, and written a graphics engine from scratch. Now I'm looking for a studio where I can ship ambitious things.",
 };
