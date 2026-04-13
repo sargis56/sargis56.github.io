@@ -188,7 +188,8 @@ const PROJECTS = [
     tags: ["research"],
     role: "Author · Seneca Capstone",
     tech: ["Academic research"],
-    links: { paper: "https://example.com/REPLACE-ME" }, // TODO: Google Site URL
+    art: { kind: "paper", kicker: "Seneca Capstone · IND800", stamp: "Peer-reviewed" },
+    links: { paper: "uploads/video-game-addiction-paper.pdf" },
     bullets: [
       "Two-year study into which game mechanics drive compulsive play in teens and young adults",
       "Synthesised academic journals, screen-time data, and gambling-addiction literature",
