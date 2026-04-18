@@ -250,7 +250,8 @@ a { color: inherit; text-decoration: none; }
 @page { size: letter; margin: 0; }
 @media print {
   html, body { background: #fff; }
-  .sheet { margin: 0; box-shadow: none; width: 8.5in; background: #fff; }
+  .sheet { margin: 0; box-shadow: none; width: 8.5in; background: #fff; padding-top: 0.6in; padding-bottom: 0.3in; }
+  .sheet::before { content: none; }
   .tweaks, .hint { display: none !important; }
   * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
