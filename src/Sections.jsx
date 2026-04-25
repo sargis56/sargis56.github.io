@@ -146,6 +146,64 @@ a.stat .stat-label::after { content: ' →'; color: var(--accent); }
 }
 .contact-links a:hover { color: var(--accent); }
 
+/* ── Resume picker ─────────────────────────────────────── */
+.resume-picker {
+  margin: 40px auto 0;
+  max-width: 640px;
+  display: flex; flex-direction: column; gap: 16px;
+  align-items: center;
+}
+.resume-picker-label {
+  font: 500 11px var(--font-mono); letter-spacing: .14em;
+  text-transform: uppercase; color: var(--fg-faint);
+  display: flex; align-items: center; gap: 12px;
+}
+.resume-picker-label::before,
+.resume-picker-label::after {
+  content: ''; width: 32px; height: 1px; background: var(--line);
+}
+.resume-picker-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%;
+}
+@media (max-width: 560px) {
+  .resume-picker-row { grid-template-columns: 1fr; }
+}
+.resume-card {
+  position: relative;
+  display: grid; gap: 4px;
+  padding: 18px 22px 20px;
+  border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--bg);
+  text-align: left;
+  transition: border-color .15s, transform .15s, background .15s;
+}
+.resume-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  background: var(--bg-3);
+}
+.resume-card-kicker {
+  font: 600 10px var(--font-mono); letter-spacing: .14em;
+  text-transform: uppercase; color: var(--accent);
+}
+.resume-card-title {
+  font: 600 18px var(--font-display); letter-spacing: -.005em;
+  margin-top: 2px;
+}
+[data-theme="print"] .resume-card-title { font-weight: 400; }
+.resume-card-sub {
+  font: 500 12px var(--font-mono); color: var(--fg-dim);
+  letter-spacing: .02em; margin-top: 2px;
+}
+.resume-card-arrow {
+  position: absolute; top: 16px; right: 18px;
+  font: 600 16px var(--font-mono); color: var(--fg-faint);
+  transition: color .15s, transform .15s;
+}
+.resume-card:hover .resume-card-arrow {
+  color: var(--accent); transform: translate(2px, -2px);
+}
+
 .footer {
   padding: 32px 0 40px; text-align: center;
   font: 500 11px var(--font-mono); color: var(--fg-faint); letter-spacing: .06em;
@@ -284,10 +342,28 @@ function Contact() {
         <p className="contact-sub">Open to game programming and applied-AI roles. Toronto-based, remote-friendly.</p>
         <div className="contact-ctas">
           <a className="btn btn-primary" href={'mailto:' + PROFILE.email}>Email me</a>
-          <a className="btn" href={PROFILE.links.resume} target="_blank">Resume</a>
+          <a className="btn" href={PROFILE.links.linkedin} target="_blank" rel="noopener">LinkedIn</a>
         </div>
+
+        <div className="resume-picker">
+          <div className="resume-picker-label">Grab a resume</div>
+          <div className="resume-picker-row">
+            <a className="resume-card" href="Resume - AI.html" target="_blank">
+              <span className="resume-card-kicker">01 / for</span>
+              <span className="resume-card-title">AI &amp; ML roles</span>
+              <span className="resume-card-sub">RAG · LLMs · fine-tuning · evals</span>
+              <span className="resume-card-arrow">→</span>
+            </a>
+            <a className="resume-card" href="Resume - Gaming.html" target="_blank">
+              <span className="resume-card-kicker">02 / for</span>
+              <span className="resume-card-title">Game dev roles</span>
+              <span className="resume-card-sub">Engines · gameplay · graphics · shipped</span>
+              <span className="resume-card-arrow">→</span>
+            </a>
+          </div>
+        </div>
+
         <div className="contact-links">
-          <a href={PROFILE.links.linkedin}>LinkedIn</a>
           <a href={'mailto:' + PROFILE.email}>{PROFILE.email}</a>
         </div>
       </div>
