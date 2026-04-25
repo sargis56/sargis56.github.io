@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Sargis Nahapetyan · Resume (Gaming)</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=JetBrains+Mono:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<style>
+:root,
+[data-theme="print"] {
+  --bg:       oklch(97% 0.008 80);
+  --bg-2:     oklch(93% 0.01 80);
+  --fg:       oklch(20% 0.01 60);
+  --fg-dim:   oklch(45% 0.01 60);
+  --fg-faint: oklch(58% 0.01 60);
+  --line:     oklch(83% 0.01 80);
+  --accent:   oklch(52% 0.16 var(--hue, 145));
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body:    'Space Grotesk', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+  --chip-bg:  var(--bg-2);
+}
+[data-theme="engine"] {
+  --bg:       oklch(16% 0.012 250);
+  --bg-2:     oklch(24% 0.016 250);
+  --fg:       oklch(94% 0.008 80);
+  --fg-dim:   oklch(70% 0.01 250);
+  --fg-faint: oklch(50% 0.01 250);
+  --line:     oklch(32% 0.012 250);
+  --accent:   oklch(72% 0.17 var(--hue, 145));
+  --chip-bg:  var(--bg-2);
+}
+[data-theme="serif"] {
+  --font-display: 'Instrument Serif', serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #8a8a86; }
+body { font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+
+.sheet {
+  width: 8.5in; min-height: 11in;
+  margin: 28px auto;
+  padding: 0.56in 0.62in 0.5in;
+  background: var(--bg); color: var(--fg);
+  box-shadow: 0 18px 60px -20px rgba(0,0,0,.45);
+  position: relative;
+  font-size: 9.2pt; line-height: 1.42;
+  display: flex; flex-direction: column;
+}
+.sheet::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px;
+  background: var(--accent);
+}
+
+.head { display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: start; }
+.name {
+  font: 600 34pt/0.98 var(--font-display);
+  letter-spacing: -0.015em;
+}
+[data-theme="serif"] .name { font-weight: 400; font-size: 38pt; letter-spacing: 0; }
+.roles {
+  margin-top: 6px;
+  font: 500 10pt var(--font-mono);
+  letter-spacing: 0.04em; text-transform: uppercase;
+}
+.roles .amp { color: var(--accent); margin: 0 .35em; }
+
+.contact {
+  text-align: right;
+  font: 500 8pt/1.7 var(--font-mono);
+  color: var(--fg-dim);
+}
+.contact a:hover { color: var(--accent); }
+.contact .loc { color: var(--fg-faint); }
+
+.bio {
+  margin-top: 16px; color: var(--fg-dim);
+  font-size: 9.2pt; max-width: 72ch;
+  text-wrap: pretty;
+}
+.stats {
+  margin-top: 14px;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
+  padding: 11px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.stat { display: flex; align-items: center; gap: 9px; }
+.stat-val {
+  font: 600 15pt/1 var(--font-display); color: var(--accent);
+  letter-spacing: -0.01em; white-space: nowrap;
+}
+.stat-lbl { font: 500 7pt/1.3 var(--font-mono); color: var(--fg-dim); text-wrap: balance; }
+
+.body {
+  margin-top: 16px;
+  display: grid; grid-template-columns: 1fr 0.58fr;
+  gap: 30px;
+  flex: 1;
+}
+.col { display: flex; flex-direction: column; gap: 16px; }
+
+.sec-h {
+  display: flex; align-items: baseline; gap: 10px;
+  margin-bottom: 7px;
+}
+.sec-k {
+  font: 600 7.5pt var(--font-mono); color: var(--accent);
+  letter-spacing: 0.14em; text-transform: uppercase;
+  white-space: nowrap;
+}
+.sec-t {
+  font: 600 12.5pt var(--font-display); letter-spacing: -0.005em;
+}
+[data-theme="serif"] .sec-t { font-weight: 400; font-style: italic; font-size: 15pt; }
+.sec-r { flex: 1; height: 1px; background: var(--line); align-self: center; }
+
+.xp { display: flex; flex-direction: column; gap: 8px; }
+.xp-row { break-inside: avoid; }
+.xp-top {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 10px;
+}
+.xp-role { font: 600 9.6pt var(--font-display); }
+.xp-org  { color: var(--fg-dim); font-weight: 500; }
+.xp-org::before { content: " · "; color: var(--fg-faint); }
+.xp-when {
+  font: 500 7.4pt var(--font-mono); color: var(--fg-faint);
+  letter-spacing: 0.03em; white-space: nowrap;
+}
+.xp-sum { margin-top: 2px; color: var(--fg-dim); font-size: 8.6pt; text-wrap: pretty; }
+.xp-bullets { margin-top: 4px; display: flex; flex-direction: column; gap: 2px; }
+.xp-bullets li {
+  list-style: none; position: relative; padding-left: 12px;
+  color: var(--fg-dim); font-size: 8.5pt; line-height: 1.38;
+  text-wrap: pretty;
+}
+.xp-bullets li::before {
+  content: ""; position: absolute; left: 2px; top: 6px;
+  width: 4px; height: 4px; background: var(--accent); border-radius: 999px;
+  opacity: .85;
+}
+.xp-row.min .xp-sum { display: none; }
+.xp-row.min .xp-bullets { display: none; }
+.xp-row.min .xp-top { font-size: 8.8pt; }
+
+.proj { display: flex; flex-direction: column; gap: 7px; }
+.proj-row {
+  display: grid; grid-template-columns: 4px 1fr; gap: 10px;
+  break-inside: avoid;
+}
+.proj-bar { background: var(--accent); border-radius: 2px; opacity: .85; }
+.proj-top { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.proj-name { font: 600 9.4pt var(--font-display); }
+.proj-tech {
+  font: 500 7.2pt var(--font-mono); color: var(--fg-faint);
+  letter-spacing: 0.03em;
+}
+.proj-tag { color: var(--fg-dim); font-size: 8.4pt; }
+.proj-result {
+  margin-top: 2px;
+  font: 500 7.4pt var(--font-mono); color: var(--accent);
+  letter-spacing: 0.02em;
+}
+
+.skills { display: flex; flex-direction: column; gap: 8px; }
+.sk-row { break-inside: avoid; }
+.sk-cat {
+  font: 600 7.2pt var(--font-mono); color: var(--fg-faint);
+  letter-spacing: 0.1em; text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.sk-chips { display: flex; flex-wrap: wrap; gap: 4px; }
+.chip {
+  display: inline-flex; align-items: center;
+  padding: 2.5px 7px; border-radius: 999px;
+  font: 500 7pt var(--font-mono);
+  background: var(--chip-bg); color: var(--fg-dim);
+  border: 1px solid var(--line);
+  letter-spacing: 0.01em;
+}
+.chip.hi { color: var(--accent); border-color: color-mix(in oklch, var(--accent) 50%, var(--line)); }
+
+.edu { display: flex; flex-direction: column; gap: 7px; }
+.edu-row { break-inside: avoid; }
+.edu-top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.edu-school { font: 600 9pt var(--font-display); }
+.edu-cred { color: var(--fg-dim); font-size: 8pt; }
+.edu-note {
+  margin-top: 1px; font: 500 7.2pt var(--font-mono);
+  color: var(--accent); letter-spacing: 0.02em;
+}
+.certs {
+  margin-top: 10px; padding-top: 9px;
+  border-top: 1px solid var(--line);
+}
+.certs-h {
+  font: 600 7.2pt var(--font-mono); color: var(--fg-faint);
+  letter-spacing: 0.1em; text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.certs ul { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+.certs li {
+  position: relative; padding-left: 11px;
+  display: flex; flex-direction: column; gap: 1px;
+  break-inside: avoid;
+}
+.certs li::before {
+  content: ""; position: absolute; left: 0; top: 4px;
+  width: 4px; height: 4px; background: var(--accent); border-radius: 1px;
+}
+.certs .name { font-size: 8.2pt; color: var(--fg); line-height: 1.25; text-wrap: balance; }
+.certs .src  { font: 500 7pt var(--font-mono); color: var(--fg-faint); letter-spacing: 0.03em; }
+
+.proj-more {
+  margin-top: 2px;
+  font: 500 8.2pt var(--font-mono); color: var(--fg-dim);
+  letter-spacing: 0.02em;
+  display: flex; align-items: center; gap: 8px;
+}
+.proj-more .url { color: var(--accent); font-weight: 700; }
+.proj-more .arrow { color: var(--accent); font-weight: 700; }
+
+@page { size: letter; margin: 0; }
+@media print {
+  html, body { background: #fff; }
+  .sheet { margin: 0; box-shadow: none; width: 8.5in; background: #fff; padding-top: 0.6in; padding-bottom: 0.3in; }
+  .sheet::before { content: none; }
+  .tweaks, .hint { display: none !important; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+.tweaks {
+  position: fixed; bottom: 16px; right: 16px; z-index: 99;
+  width: 240px; padding: 14px;
+  background: #1b1b1f; color: #e8e8ea;
+  border: 1px solid #333; border-radius: 10px;
+  font: 500 12px 'JetBrains Mono', monospace;
+  box-shadow: 0 12px 40px -10px rgba(0,0,0,.5);
+}
+.tweaks h4 { font: 600 12px 'JetBrains Mono'; letter-spacing:.08em; text-transform:uppercase; margin-bottom:10px; color:#aaa; }
+.tw-row { display:flex; flex-direction:column; gap:5px; margin-bottom:10px; }
+.tw-row > span { font-size:10px; color:#888; letter-spacing:.06em; text-transform:uppercase; }
+.tw-seg { display:flex; gap:4px; }
+.tw-seg button {
+  flex:1; padding:6px 4px; font:500 10px 'JetBrains Mono';
+  background:#2a2a30; color:#ccc; border:1px solid #3a3a42; border-radius:5px; cursor:pointer;
+}
+.tw-seg button.on { background:#e8e8ea; color:#1b1b1f; border-color:#e8e8ea; }
+.tweaks input[type=range]{ width:100%; accent-color:#e8e8ea; }
+.tweaks input[type=text]{
+  width:100%; padding:6px; font:500 10px 'JetBrains Mono';
+  background:#2a2a30; color:#e8e8ea; border:1px solid #3a3a42; border-radius:5px;
+}
+.tweaks label { display:flex; align-items:center; gap:6px; font-size:11px; cursor:pointer; }
+</style>
+</head>
+
+<body>
+<div id="root"></div>
+
+<script type="text/babel" src="src/data.jsx"></script>
+<script type="text/babel">
+const { useState, useEffect, useMemo } = React;
+
+const RESUME_TWEAKS = /*EDITMODE-BEGIN*/{
+  "theme": "print",
+  "hue": 145,
+  "showStats": true,
+  "portfolioUrl": "sargis.ca"
+}/*EDITMODE-END*/;
+
+/* ───────── Gaming-tailored copy overrides ───────── */
+
+const AI_LOCATION = "Location: Flexible";
+
+const AI_BIO = "Game developer with a decade of shipped software across engines, gameplay, graphics, and modding. I led a 40-person student team to launch a competitive PvP title on Steam, wrote a 3D engine from scratch in C++/OpenGL, and have 54 published mods reaching 150,000+ players — the longest-running of which is older than my CS degree. I'm looking for a studio where I can ship ambitious things at scale.";
+
+const AI_STATS = [
+  { value: "40",    label: "Student team led to ship a Steam title" },
+  { value: "150k+", label: "Players using my published mods" },
+  { value: "54",    label: "Mods shipped on Steam Workshop" },
+  { value: "8",     label: "Technical courses TA'd, incl. Graphics & Engines" },
+];
+
+// Experience reframed for games hiring. Bullets focus on engines, gameplay, leadership.
+const AI_EXPERIENCE = [
+  {
+    role: "Team Lead · Gameplay Programmer",
+    org: "EQUINOX (Steam release)",
+    when: "2022 – 2023",
+    summary: "Elected by class to lead a 40-student team building a competitive PvP title from concept to Steam launch.",
+    bullets: [
+      "Programmed core shooting systems and dodgeball-physics gameplay mechanics in Unreal Engine C++ (no Blueprints)",
+      "Owned source control and cross-team project management across art, design, audio, and engineering sub-teams",
+      "Drove the project through milestones to a successful Steam release",
+    ],
+  },
+  {
+    role: "Independent Game Modder",
+    org: "Steam Workshop",
+    when: "2017 – present",
+    summary: "54 published mods for Garry's Mod and Pirates, Vikings and Knights II — my longest-running shipped software.",
+    bullets: [
+      "Self-taught Lua scripting, 3D modelling, rigging, and Source Engine tooling to ship custom weapons, characters, and entities",
+      "Top mod sits at 62k subscribers; total reach across mods is 150,000+ players",
+      "Continuous community support: bug fixes, balance updates, and player feedback over multiple years",
+    ],
+  },
+  {
+    role: "QA Tester & Community Consultant",
+    org: "Pirates, Vikings and Knights II",
+    when: "2018 – 2019",
+    summary: "QA on a live Source Engine title; advised on modding-scene best practices and seeded the workshop with launch content.",
+    bullets: [],
+  },
+  {
+    role: "Software Developer Intern",
+    org: "Asclepius Snakebite Foundation",
+    when: "May – Aug 2023",
+    summary: "Built an educational visual novel (Ren'Py / Python) with snake experts and physicians.",
+    bullets: [
+      "Owned UI, navigation, and fact-entry systems across ~3,000 LOC",
+      "Translated domain expertise from non-technical SMEs into shippable game systems",
+    ],
+  },
+  {
+    role: "Teaching Assistant & Tutor",
+    org: "Humber College",
+    when: "2020 – 2023",
+    summary: "TA'd 8 technical courses across 5 semesters — Computer Graphics, Game Engines (Unity & Unreal), Data Structures, Linear Algebra, Physics. Selected on 4.0 GPA, top of program.",
+    bullets: [],
+  },
+  {
+    role: "Software Engineer Intern",
+    org: "Niche Protocol",
+    when: "Dec 2023 – Apr 2024",
+    summary: "Shipped a production LLM-powered chatbot to 5,000 users — RAG pipeline, multi-screen React Native UI, and the iOS release.",
+    bullets: [],
+  },
+];
+
+// Games-first project list.
+const AI_PROJ_PICKS = [
+  {
+    id: "equinox",
+    tech: ["Unreal Engine", "C++ (no Blueprints)", "Multiplayer"],
+    result: "Shipped on Steam · 40-person team · gameplay & shooting systems",
+  },
+  {
+    id: "woe",
+    tech: ["Unity", "C#", "Networking", "AI"],
+    result: "Networked co-op horror · led 3-person team · monster AI + netcode",
+  },
+  {
+    id: "gfx-engine",
+    tech: ["C++", "OpenGL", "GLSL", "XML"],
+    result: "Frustum culling · Fresnel/noise shaders · XML asset manager",
+  },
+  {
+    id: "hexes",
+    tech: ["C++", "OpenGL", "Unity"],
+    result: "Custom-engine fantasy roguelike · later ported to Unity",
+  },
+  {
+    id: "snakebite",
+    tech: ["Python", "Ren'Py"],
+    result: "Story-driven educational VN · ~3,000 LOC across UI & systems",
+  },
+  {
+    id: "jams",
+    tech: ["Unity", "C#"],
+    result: "Four jam games shipped under tight deadlines",
+  },
+];
+
+// Skills reordered: engines & languages first.
+const AI_SKILL_ROWS = ["Engines & 3D", "Languages", "Gameplay & Systems", "Tools & Workflow"];
+const AI_SKILLS = {
+  "Engines & 3D": ["Unreal", "Unity", "OpenGL", "Source", "Blender"],
+  Languages: ["C++", "C#", "Lua", "GLSL"],
+  "Gameplay & Systems": ["Multiplayer netcode", "Gameplay AI", "Shaders", "Rendering", "Physics", "Tooling"],
+  "Tools & Workflow": ["Git", "Perforce-ready", "Jira", "Agile/Scrum", "Code Review"],
+};
+
+// Highlight games-relevant chips
+const AI_HI = new Set([
+  "Unreal", "Unity", "OpenGL", "Source", "C++", "C#", "Lua", "GLSL",
+  "Multiplayer netcode", "Gameplay AI", "Shaders", "Rendering",
+]);
+
+const AI_EDU_NOTES = {
+  "Humber College": "4.0 GPA · top of program · TA'd Graphics & Engines",
+};
+
+const AI_CERTS = [
+  { name: "Blender Character Creator", src: "Udemy" },
+  { name: "CS50: Intro to Artificial Intelligence", src: "Harvard" },
+  { name: "Practical Deep Learning for Coders", src: "fast.ai" },
+  { name: "Causes & Effects of Video Game Addiction", src: "Peer-reviewed · Seneca Capstone" },
+];
+
+/* ──────────────────────────────────────────────── */
+
+function SectionHead({ n, t }) {
+  return (
+    <div className="sec-h">
+      <span className="sec-k">{n} /</span>
+      <span className="sec-t">{t}</span>
+      <span className="sec-r" />
+    </div>
+  );
+}
+
+function Resume({ tweaks }) {
+  const projects = useMemo(() => {
+    const byId = Object.fromEntries(PROJECTS.map(p => [p.id, p]));
+    return AI_PROJ_PICKS.map(pick => ({ ...byId[pick.id], techShort: pick.tech, result: pick.result }));
+  }, []);
+  const education = useMemo(() => EDUCATION.filter(e => e.school !== "Centennial College"), []);
+
+  return (
+    <div className="sheet">
+      <header className="head">
+        <div>
+          <h1 className="name">{PROFILE.name}</h1>
+          <div className="roles">
+            Game Developer<span className="amp">&</span>Engine Programmer
+          </div>
+        </div>
+        <div className="contact">
+          <div><a href={"mailto:" + PROFILE.email}>{PROFILE.email}</a></div>
+          <div>{PROFILE.phone}</div>
+          {tweaks.portfolioUrl && <div><a href={"https://" + tweaks.portfolioUrl}>{tweaks.portfolioUrl}</a></div>}
+          <div className="loc">{AI_LOCATION}</div>
+        </div>
+      </header>
+
+      <p className="bio">{AI_BIO}</p>
+
+      {tweaks.showStats && (
+        <div className="stats">
+          {AI_STATS.map((s, i) => (
+            <div className="stat" key={i}>
+              <span className="stat-val">{s.value}</span>
+              <span className="stat-lbl">{s.label}</span>
+            </div>
+          ))}
+        </div>
+      )}
+
+      <div className="body">
+        <div className="col">
+          <section>
+            <SectionHead n="01" t="Experience" />
+            <div className="xp">
+              {AI_EXPERIENCE.map((e, i) => {
+                const hasBullets = e.bullets && e.bullets.length > 0;
+                return (
+                  <div key={i} className={"xp-row" + (hasBullets ? "" : "")}>
+                    <div className="xp-top">
+                      <span>
+                        <span className="xp-role">{e.role}</span>
+                        <span className="xp-org">{e.org}</span>
+                      </span>
+                      <span className="xp-when">{e.when}</span>
+                    </div>
+                    <div className="xp-sum">{e.summary}</div>
+                    {hasBullets && (
+                      <ul className="xp-bullets">
+                        {e.bullets.map((b, j) => <li key={j}>{b}</li>)}
+                      </ul>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+
+          <section>
+            <SectionHead n="02" t="Selected Projects" />
+            <div className="proj">
+              {projects.map((p, i) => (
+                <div className="proj-row" key={i}>
+                  <div className="proj-bar" />
+                  <div>
+                    <div className="proj-top">
+                      <span className="proj-name">{p.title}</span>
+                      <span className="proj-tech">{p.techShort.join(" · ")}</span>
+                    </div>
+                    <div className="proj-tag">{p.tagline}</div>
+                    {p.result && <div className="proj-result">→ {p.result}</div>}
+                  </div>
+                </div>
+              ))}
+              <div className="proj-more">
+                <span className="arrow">→</span>
+                <span>Write-ups, screenshots & demos for every project at <a className="url" href={"https://" + tweaks.portfolioUrl}>{tweaks.portfolioUrl}</a></span>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <aside className="col">
+          <section>
+            <SectionHead n="03" t="Skills" />
+            <div className="skills">
+              {AI_SKILL_ROWS.map(cat => (
+                <div className="sk-row" key={cat}>
+                  <div className="sk-cat">{cat}</div>
+                  <div className="sk-chips">
+                    {AI_SKILLS[cat].map(s => (
+                      <span className={"chip" + (AI_HI.has(s) ? " hi" : "")} key={s}>{s}</span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section>
+            <SectionHead n="04" t="Education" />
+            <div className="edu">
+              {education.map((e, i) => (
+                <div className="edu-row" key={i}>
+                  <div className="edu-top">
+                    <span className="edu-school">{e.school}</span>
+                    <span className="xp-when">{e.when}</span>
+                  </div>
+                  <div className="edu-cred">{e.cred}</div>
+                  {AI_EDU_NOTES[e.school] && <div className="edu-note">{AI_EDU_NOTES[e.school]}</div>}
+                </div>
+              ))}
+            </div>
+            <div className="certs">
+              <div className="certs-h">Self-study & courses</div>
+              <ul>
+                {AI_CERTS.map((c, i) => (
+                  <li key={i}><span className="name">{c.name}</span><span className="src">{c.src}</span></li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </div>
+  );
+}
+
+function Tweaks({ t, set, open }) {
+  if (!open) return null;
+  const Seg = ({ k, opts }) => (
+    <div className="tw-seg">
+      {opts.map(o => (
+        <button key={o} className={t[k] === o ? "on" : ""} onClick={() => set({ [k]: o })}>{o}</button>
+      ))}
+    </div>
+  );
+  return (
+    <div className="tweaks">
+      <h4>Tweaks</h4>
+      <div className="tw-row"><span>Theme</span><Seg k="theme" opts={["print", "engine", "serif"]} /></div>
+      <div className="tw-row"><span>Accent hue · {t.hue}</span>
+        <input type="range" min="0" max="360" value={t.hue} onChange={e => set({ hue: +e.target.value })} />
+      </div>
+      <div className="tw-row">
+        <label><input type="checkbox" checked={t.showStats} onChange={e => set({ showStats: e.target.checked })} /> Show highlights strip</label>
+      </div>
+      <div className="tw-row"><span>Portfolio URL</span>
+        <input type="text" value={t.portfolioUrl} onChange={e => set({ portfolioUrl: e.target.value })} placeholder="sargis.ca" />
+      </div>
+    </div>
+  );
+}
+
+function App() {
+  const [t, setT] = useState(RESUME_TWEAKS);
+  const [tweaksOpen, setTweaksOpen] = useState(false);
+  const set = (patch) => {
+    setT(cur => {
+      const next = { ...cur, ...patch };
+      window.parent.postMessage({ type: "__edit_mode_set_keys", edits: patch }, "*");
+      return next;
+    });
+  };
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = t.theme;
+    document.documentElement.style.setProperty("--hue", t.hue);
+  }, [t.theme, t.hue]);
+
+  useEffect(() => {
+    const h = (e) => {
+      if (e.data?.type === "__activate_edit_mode") setTweaksOpen(true);
+      if (e.data?.type === "__deactivate_edit_mode") setTweaksOpen(false);
+    };
+    window.addEventListener("message", h);
+    window.parent.postMessage({ type: "__edit_mode_available" }, "*");
+    return () => window.removeEventListener("message", h);
+  }, []);
+
+  return (
+    <>
+      <Resume tweaks={t} />
+      <Tweaks t={t} set={set} open={tweaksOpen} />
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>
