@@ -233,10 +233,57 @@ a { color: inherit; text-decoration: none; }
 @page { size: letter; margin: 0; }
 @media print {
   html, body { background: #fff; }
-  .sheet { margin: 0; box-shadow: none; width: 8.5in; background: #fff; padding-top: 0.6in; padding-bottom: 0.3in; }
-  .sheet::before { content: none; }
+  .sheet {
+    margin: 0; box-shadow: none;
+    width: 8.5in; height: 11in; min-height: 0;
+    background: #fff;
+    padding: 0.36in 0.5in 0.28in;
+    overflow: hidden;
+    font-size: 8.4pt; line-height: 1.32;
+    page-break-after: avoid;
+  }
+  .sheet::before { width: 4px; }
   .tweaks, .hint { display: none !important; }
   * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  /* Tighter spacing in print */
+  .name { font-size: 26pt; }
+  .roles { font-size: 8.6pt; margin-top: 3px; }
+  .contact { font-size: 7.4pt; line-height: 1.5; }
+  .bio { margin-top: 9px; font-size: 8.4pt; max-width: 78ch; }
+  .stats { margin-top: 8px; padding: 7px 0; }
+  .stat-val { font-size: 12pt; }
+  .stat-lbl { font-size: 6.4pt; }
+  .body { margin-top: 9px; gap: 20px; }
+  .col { gap: 9px; }
+  .sec-h { margin-bottom: 5px; }
+  .sec-t { font-size: 11.5pt; }
+  .xp { gap: 4px; }
+  .xp-row { page-break-inside: avoid; }
+  .xp-role { font-size: 8.7pt; }
+  .xp-sum { font-size: 7.9pt; margin-top: 1px; line-height: 1.28; }
+  .xp-bullets { margin-top: 2px; gap: 0px; }
+  .xp-bullets li { font-size: 7.7pt; line-height: 1.3; padding-left: 10px; }
+  .xp-bullets li::before { top: 5px; width: 3px; height: 3px; }
+  .proj { gap: 5px; }
+  .proj-row { page-break-inside: avoid; }
+  .proj-name { font-size: 8.9pt; }
+  .proj-tech { font-size: 6.8pt; }
+  .proj-tag { font-size: 8pt; }
+  .proj-result { font-size: 7pt; margin-top: 1px; }
+  .proj-more { font-size: 7.6pt; margin-top: 4px; }
+  .skills { gap: 6px; }
+  .sk-cat { font-size: 6.8pt; margin-bottom: 3px; }
+  .chip { font-size: 6.6pt; padding: 2px 6px; }
+  .edu { gap: 5px; }
+  .edu-school { font-size: 8.6pt; }
+  .edu-cred { font-size: 7.6pt; }
+  .edu-note { font-size: 6.8pt; }
+  .certs { margin-top: 7px; padding-top: 6px; }
+  .certs-h { font-size: 6.8pt; margin-bottom: 4px; }
+  .certs ul { gap: 3px; }
+  .certs .name { font-size: 7.7pt; line-height: 1.22; }
+  .certs .src { font-size: 6.6pt; }
 }
 
 .tweaks {
@@ -607,6 +654,15 @@ function App() {
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+
+/* Auto-print: wait for fonts + React render, then trigger the print dialog */
+(async () => {
+  try { await document.fonts.ready; } catch (e) {}
+  // Give React a tick to mount, then a safety delay
+  await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+  await new Promise(r => setTimeout(r, 500));
+  window.print();
+})();
 </script>
 </body>
 </html>
