@@ -654,15 +654,6 @@ function App() {
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(<App />);
-
-/* Auto-print: wait for fonts + React render, then trigger the print dialog */
-(async () => {
-  try { await document.fonts.ready; } catch (e) {}
-  // Give React a tick to mount, then a safety delay
-  await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
-  await new Promise(r => setTimeout(r, 500));
-  window.print();
-})();
 </script>
 </body>
 </html>
