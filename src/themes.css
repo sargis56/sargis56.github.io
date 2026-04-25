@@ -146,6 +146,7 @@ section { padding: 110px 0; position: relative; scroll-margin-top: -30px; }
   transition: color .15s;
 }
 .nav-links a:hover { color: var(--accent); }
+.nav-ctas { display: flex; gap: 10px; }
 .nav-cta {
   padding: 9px 16px; border: 1px solid var(--line);
   border-radius: var(--radius); font: 500 13px var(--font-mono);
