@@ -13,11 +13,9 @@ function Nav() {
           <a href="#experience">Experience</a>
           <a href="#skills">Skills</a>
           <a href="#about">About</a>
+          <a href="resume.html">Resume</a>
         </div>
-        <div className="nav-ctas">
-          <a href="resume.html" className="nav-cta">Resume</a>
-          <a href="#contact" className="nav-cta">Get in touch</a>
-        </div>
+        <a href="#contact" className="nav-cta">Get in touch</a>
       </div>
     </nav>
   );
