@@ -339,7 +339,7 @@ function Contact() {
     <>
       <div className="contact">
         <h2 className="contact-title">Let's build something.</h2>
-        <p className="contact-sub">Open to game programming and applied-AI roles. Toronto-based, remote-friendly.</p>
+        <p className="contact-sub">Open to game programming and applied-AI roles. Toronto-based, willing to relocate, remote-friendly.</p>
         <div className="contact-ctas">
           <a className="btn btn-primary" href={'mailto:' + PROFILE.email}>Email me</a>
           <a className="btn" href={PROFILE.links.linkedin} target="_blank" rel="noopener">LinkedIn</a>
