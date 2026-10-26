@@ -13,7 +13,7 @@ function Nav() {
           <a href="#experience">Experience</a>
           <a href="#skills">Skills</a>
           <a href="#about">About</a>
-          <a href="resume.html">Resume</a>
+          <a href={PROFILE.links.resume}>Resume</a>
         </div>
         <a href="#contact" className="nav-cta">Get in touch</a>
       </div>
@@ -24,6 +24,12 @@ function Nav() {
 function App() {
   const [tk, update, tweaksVisible] = useTweaks(window.TWEAK_DEFAULTS);
   const [openId, setOpenId] = React.useState(null);
+
+  // The page renders after load, so the browser can't jump to a #hash on its own.
+  React.useEffect(() => {
+    const target = document.getElementById(location.hash.slice(1));
+    if (target) target.scrollIntoView({ behavior: 'instant' });
+  }, []);
 
   // apply theme + accent to <html>
   React.useEffect(() => {

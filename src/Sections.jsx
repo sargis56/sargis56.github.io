@@ -148,6 +148,7 @@ a.stat .stat-label::after { content: ' →'; color: var(--accent); }
 
 /* ── Resume picker ─────────────────────────────────────── */
 .resume-picker {
+  scroll-margin-top: 96px;
   margin: 40px auto 0;
   max-width: 860px;
   display: flex; flex-direction: column; gap: 16px;
@@ -345,7 +346,7 @@ function Contact() {
           <a className="btn" href={PROFILE.links.linkedin} target="_blank" rel="noopener">LinkedIn</a>
         </div>
 
-        <div className="resume-picker">
+        <div className="resume-picker" id="resumes">
           <div className="resume-picker-label">Grab a resume</div>
           <div className="resume-picker-row">
             <a className="resume-card" href="Resume - AI.html" target="_blank">

@@ -187,7 +187,7 @@ function HeroSplit({ onOpenProject }) {
       </div>
       <div className="split-ctas">
         <a className="btn btn-primary" href="#highlights">View work ↓</a>
-        <a className="btn" href={PROFILE.links.resume} target="_blank">Resume</a>
+        <a className="btn" href={PROFILE.links.resume}>Resume</a>
         <a className="btn" href="#contact">Contact</a>
       </div>
     </section>
@@ -244,7 +244,7 @@ function HeroBoot() {
         </div>
         <div className={'boot-reveal' + (done ? ' done' : '')} style={{ position: 'relative' }}>
           <a className="btn btn-primary" href="#highlights">View work ↓</a>
-          <a className="btn" href={PROFILE.links.resume} target="_blank">Resume</a>
+          <a className="btn" href={PROFILE.links.resume}>Resume</a>
           <a className="btn" href="#contact">Contact</a>
           <button className="boot-skip" onClick={skip}>click to skip</button>
         </div>
@@ -304,7 +304,7 @@ function HeroOrbit({ onOpenProject }) {
         </div>
         <div className="orbit-ctas">
           <a className="btn btn-primary" href="#highlights">View work ↓</a>
-          <a className="btn" href={PROFILE.links.resume} target="_blank">Resume</a>
+          <a className="btn" href={PROFILE.links.resume}>Resume</a>
           <a className="btn" href="#contact">Contact</a>
         </div>
       </div>
