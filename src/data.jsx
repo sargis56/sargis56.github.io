@@ -5,14 +5,14 @@
 const PROFILE = {
   name: "Sargis Nahapetyan",
   roles: ["Game Developer", "AI Engineer"],
-  location: "Toronto, Ontario",
+  location: "Santa Clara, California",
   email: "nahapetyansargis@gmail.com",
   phone: "416-930-1609",
   links: {
     linkedin: "https://www.linkedin.com/in/sargis-n/",
     resume: "resume.html",
   },
-  bio: "I build games and the systems that make them tick: engines, graphics, gameplay AI. Lately I've been pulling modern machine learning into that work too. I've led a 40-person student team to ship a game on Steam, put LLM products in front of thousands of users, and written a graphics engine from scratch. Now I'm looking for a studio where I can ship ambitious things.",
+  bio: "I build games and the systems that make them tick: engines, graphics, gameplay AI. I'm now pursuing a Master of Science in Artificial Intelligence at Santa Clara University to pull modern machine learning deeper into that work. I've led a 40-person student team to ship a game on Steam, put LLM products in front of thousands of users, and written a graphics engine from scratch. Next, I'm looking for a team where I can ship ambitious things.",
 };
 
 const STATS = [
@@ -311,6 +311,7 @@ const EXPERIENCE = [
 ];
 
 const EDUCATION = [
+  { school: "Santa Clara University", cred: "M.S., Artificial Intelligence", when: "2026–present", note: "Expected 2028 · Machine learning, deep learning, AI ethics" },
   { school: "Seneca Polytechnic", cred: "Hons. Bachelor, Interdisciplinary Studies", when: "2023–2025" },
   { school: "Humber College", cred: "Adv. Diploma, CS · Game Programming", when: "2020–2023", note: "4.0 GPA · top of program" },
   { school: "Centennial College", cred: "Adv. Diploma, Game Programming", when: "2016–2019" },

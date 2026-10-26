@@ -311,8 +311,8 @@ const RESUME_TWEAKS = /*EDITMODE-BEGIN*/{
 const XP_FULL = ["Niche Protocol", "Asclepius Snakebite Foundation", "Humber College", "Steam Workshop"];
 // Re-order for resume (most relevant first, not strictly chrono)
 const XP_ORDER = [
-  "Prolyncs", "Niche Protocol", "Asclepius Snakebite Foundation",
-  "Humber College", "Pirates, Vikings and Knights II", "Steam Workshop",
+  "Niche Protocol", "Asclepius Snakebite Foundation", "Humber College",
+  "Steam Workshop", "Pirates, Vikings and Knights II", "Prolyncs",
 ];
 
 // Projects: top picks for the resume + which tech to show
@@ -329,6 +329,7 @@ const SKILL_ROWS_COMPACT = ["Languages", "Engines & 3D", "AI / ML", "Web"];
 
 // Honors notes + curated self-study (resume-only; portfolio doesn't need these)
 const EDU_NOTES = {
+  "Santa Clara University": "Expected 2028 · ML, deep learning, AI ethics",
   "Humber College": "4.0 GPA · top of program",
 };
 const CERTS = [
@@ -359,6 +360,7 @@ function Resume({ tweaks }) {
     const byId = Object.fromEntries(PROJECTS.map(p => [p.id, p]));
     return PROJ_PICKS.map(pick => ({ ...byId[pick.id], techShort: pick.tech }));
   }, []);
+  const education = useMemo(() => EDUCATION.filter(e => e.school !== "Centennial College"), []);
   const skillCats = tweaks.density === "compact" ? SKILL_ROWS_COMPACT : Object.keys(SKILLS);
 
   return (
@@ -368,7 +370,7 @@ function Resume({ tweaks }) {
         <div>
           <h1 className="name">{PROFILE.name}</h1>
           <div className="roles">
-            {PROFILE.roles[0]}<span className="amp">&</span>{PROFILE.roles[1]}
+            {PROFILE.roles[0]}<span className="amp">&</span>{PROFILE.roles[1]}<span className="amp">·</span>MS AI Candidate
           </div>
         </div>
         <div className="contact">
@@ -441,23 +443,9 @@ function Resume({ tweaks }) {
 
         <aside className="col">
           <section>
-            <SectionHead n="03" t="Skills" />
-            <div className="skills">
-              {skillCats.map(cat => (
-                <div className="sk-row" key={cat}>
-                  <div className="sk-cat">{cat}</div>
-                  <div className="sk-chips">
-                    {SKILLS[cat].map(s => <span className="chip" key={s}>{s}</span>)}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          <section>
-            <SectionHead n="04" t="Education" />
+            <SectionHead n="03" t="Education" />
             <div className="edu">
-              {EDUCATION.map((e, i) => (
+              {education.map((e, i) => (
                 <div className="edu-row" key={i}>
                   <div className="edu-top">
                     <span className="edu-school">{e.school}</span>
@@ -475,6 +463,20 @@ function Resume({ tweaks }) {
                   <li key={i}><span className="name">{c.name}</span><span className="src">{c.src}</span></li>
                 ))}
               </ul>
+            </div>
+          </section>
+
+          <section>
+            <SectionHead n="04" t="Skills" />
+            <div className="skills">
+              {skillCats.map(cat => (
+                <div className="sk-row" key={cat}>
+                  <div className="sk-cat">{cat}</div>
+                  <div className="sk-chips">
+                    {SKILLS[cat].map(s => <span className="chip" key={s}>{s}</span>)}
+                  </div>
+                </div>
+              ))}
             </div>
           </section>
         </aside>

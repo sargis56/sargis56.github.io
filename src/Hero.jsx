@@ -201,6 +201,7 @@ function HeroBoot() {
     { t: 'name:     ', cls: 'term-key' }, { t: PROFILE.name + '\n', cls: 'term-val' },
     { t: 'roles:    ', cls: 'term-key' }, { t: 'game_developer', cls: 'term-hi' }, { t: ' && ' }, { t: 'ai_engineer\n', cls: 'term-hi' },
     { t: 'location: ', cls: 'term-key' }, { t: PROFILE.location + '\n', cls: 'term-val' },
+    { t: 'studying: ', cls: 'term-key' }, { t: 'ms_artificial_intelligence @ santa_clara_university\n', cls: 'term-val' },
     { t: 'shipped:  ', cls: 'term-key' }, { t: 'EQUINOX (Steam) · WOE (itch) · RAG chatbot → 5k users\n', cls: 'term-val' },
     { t: 'status:   ', cls: 'term-key' }, { t: 'open_to_work\n', cls: 'term-hi' },
     { t: '\n$ ', cls: 'term-prompt' }, { t: 'ls ./projects --featured\n' },

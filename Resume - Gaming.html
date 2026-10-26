@@ -327,9 +327,9 @@ const RESUME_TWEAKS = /*EDITMODE-BEGIN*/{
 
 /* ───────── Gaming-tailored copy overrides ───────── */
 
-const AI_LOCATION = "Location: Flexible";
+const AI_LOCATION = "Santa Clara, CA · Flexible";
 
-const AI_BIO = "Game developer with a decade of shipped software across engines, gameplay, graphics, and modding. I led a 40-person student team to launch a competitive PvP title on Steam, wrote a 3D engine from scratch in C++/OpenGL, and have 54 published mods reaching 150,000+ players — the longest-running of which is older than my CS degree. I'm looking for a studio where I can ship ambitious things at scale.";
+const AI_BIO = "Game developer and MS in Artificial Intelligence candidate at Santa Clara University, with a decade of shipped software across engines, gameplay, graphics, and modding. I led a 40-person student team to launch a PvP title on Steam, wrote a 3D engine from scratch in C++/OpenGL, and have 54 published mods reaching 150,000+ players. I'm looking for a studio where I can ship ambitious things at scale.";
 
 const AI_STATS = [
   { value: "40",    label: "Student team led to ship a Steam title" },
@@ -355,7 +355,7 @@ const AI_EXPERIENCE = [
     role: "Independent Game Modder",
     org: "Steam Workshop",
     when: "2017 – present",
-    summary: "54 published mods for Garry's Mod and Pirates, Vikings and Knights II — my longest-running shipped software.",
+    summary: "54 published mods for Garry's Mod and Pirates, Vikings and Knights II. My longest-running shipped software.",
     bullets: [
       "Self-taught Lua scripting, 3D modelling, rigging, and Source Engine tooling to ship custom weapons, characters, and entities",
       "Top mod sits at 62k subscribers; total reach across mods is 150,000+ players",
@@ -383,14 +383,14 @@ const AI_EXPERIENCE = [
     role: "Teaching Assistant & Tutor",
     org: "Humber College",
     when: "2020 – 2023",
-    summary: "TA'd 8 technical courses across 5 semesters — Computer Graphics, Game Engines (Unity & Unreal), Data Structures, Linear Algebra, Physics. Selected on 4.0 GPA, top of program.",
+    summary: "TA'd 8 technical courses across 5 semesters: Computer Graphics, Game Engines (Unity & Unreal), Data Structures, Linear Algebra, Physics. Selected on 4.0 GPA, top of program.",
     bullets: [],
   },
   {
     role: "Software Engineer Intern",
     org: "Niche Protocol",
     when: "Dec 2023 – Apr 2024",
-    summary: "Shipped a production LLM-powered chatbot to 5,000 users — RAG pipeline, multi-screen React Native UI, and the iOS release.",
+    summary: "Shipped a production LLM-powered chatbot to 5,000 users: RAG pipeline, multi-screen React Native UI, and the iOS release.",
     bullets: [],
   },
 ];
@@ -445,6 +445,7 @@ const AI_HI = new Set([
 ]);
 
 const AI_EDU_NOTES = {
+  "Santa Clara University": "Expected 2028 · ML, deep learning, AI ethics",
   "Humber College": "4.0 GPA · top of program · TA'd Graphics & Engines",
 };
 
@@ -480,7 +481,7 @@ function Resume({ tweaks }) {
         <div>
           <h1 className="name">{PROFILE.name}</h1>
           <div className="roles">
-            Game Developer<span className="amp">&</span>Engine Programmer
+            Game Developer<span className="amp">&</span>MS AI Candidate
           </div>
         </div>
         <div className="contact">
@@ -558,23 +559,7 @@ function Resume({ tweaks }) {
 
         <aside className="col">
           <section>
-            <SectionHead n="03" t="Skills" />
-            <div className="skills">
-              {AI_SKILL_ROWS.map(cat => (
-                <div className="sk-row" key={cat}>
-                  <div className="sk-cat">{cat}</div>
-                  <div className="sk-chips">
-                    {AI_SKILLS[cat].map(s => (
-                      <span className={"chip" + (AI_HI.has(s) ? " hi" : "")} key={s}>{s}</span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          <section>
-            <SectionHead n="04" t="Education" />
+            <SectionHead n="03" t="Education" />
             <div className="edu">
               {education.map((e, i) => (
                 <div className="edu-row" key={i}>
@@ -594,6 +579,22 @@ function Resume({ tweaks }) {
                   <li key={i}><span className="name">{c.name}</span><span className="src">{c.src}</span></li>
                 ))}
               </ul>
+            </div>
+          </section>
+
+          <section>
+            <SectionHead n="04" t="Skills" />
+            <div className="skills">
+              {AI_SKILL_ROWS.map(cat => (
+                <div className="sk-row" key={cat}>
+                  <div className="sk-cat">{cat}</div>
+                  <div className="sk-chips">
+                    {AI_SKILLS[cat].map(s => (
+                      <span className={"chip" + (AI_HI.has(s) ? " hi" : "")} key={s}>{s}</span>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
           </section>
         </aside>
