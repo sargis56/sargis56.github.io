@@ -203,7 +203,7 @@ function HeroBoot() {
     { t: 'location: ', cls: 'term-key' }, { t: PROFILE.location + '\n', cls: 'term-val' },
     { t: 'studying: ', cls: 'term-key' }, { t: 'ms_artificial_intelligence @ santa_clara_university\n', cls: 'term-val' },
     { t: 'shipped:  ', cls: 'term-key' }, { t: 'EQUINOX (Steam) · WOE (itch) · RAG chatbot → 5k users\n', cls: 'term-val' },
-    { t: 'status:   ', cls: 'term-key' }, { t: 'open_to_work\n', cls: 'term-hi' },
+    { t: 'status:   ', cls: 'term-key' }, { t: 'seeking_summer_2027_internship\n', cls: 'term-hi' },
     { t: '\n$ ', cls: 'term-prompt' }, { t: 'ls ./projects --featured\n' },
     { t: 'equinox/  woe/  indie-recommender/  fake-news/  gfx-engine/\n', cls: 'term-val' },
   ]), []);

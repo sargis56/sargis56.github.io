@@ -12,7 +12,7 @@ const PROFILE = {
     linkedin: "https://www.linkedin.com/in/sargis-n/",
     resume: "resume.html",
   },
-  bio: "I build games and the systems that make them tick: engines, graphics, gameplay AI. I'm now pursuing a Master of Science in Artificial Intelligence at Santa Clara University to pull modern machine learning deeper into that work. I've led a 40-person student team to ship a game on Steam, put LLM products in front of thousands of users, and written a graphics engine from scratch. Next, I'm looking for a team where I can ship ambitious things.",
+  bio: "I build games and the systems that make them tick: engines, graphics, gameplay AI. I'm now pursuing a Master of Science in Artificial Intelligence at Santa Clara University to pull modern machine learning deeper into that work. I've led a 40-person student team to ship a game on Steam, put LLM products in front of thousands of users, and written a graphics engine from scratch. Next up: a Summer 2027 internship or early-career role.",
 };
 
 const STATS = [

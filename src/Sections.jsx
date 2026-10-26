@@ -149,7 +149,7 @@ a.stat .stat-label::after { content: ' →'; color: var(--accent); }
 /* ── Resume picker ─────────────────────────────────────── */
 .resume-picker {
   margin: 40px auto 0;
-  max-width: 640px;
+  max-width: 860px;
   display: flex; flex-direction: column; gap: 16px;
   align-items: center;
 }
@@ -163,7 +163,7 @@ a.stat .stat-label::after { content: ' →'; color: var(--accent); }
   content: ''; width: 32px; height: 1px; background: var(--line);
 }
 .resume-picker-row {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; width: 100%;
 }
 @media (max-width: 560px) {
   .resume-picker-row { grid-template-columns: 1fr; }
@@ -339,7 +339,7 @@ function Contact() {
     <>
       <div className="contact">
         <h2 className="contact-title">Let's build something.</h2>
-        <p className="contact-sub">Studying AI at Santa Clara University and open to game programming and applied-AI roles. Bay Area-based, willing to relocate, remote-friendly.</p>
+        <p className="contact-sub">Studying AI at Santa Clara University and looking for Summer 2027 internships and early-career roles in software, AI, and games. Bay Area-based, willing to relocate, remote-friendly.</p>
         <div className="contact-ctas">
           <a className="btn btn-primary" href={'mailto:' + PROFILE.email}>Email me</a>
           <a className="btn" href={PROFILE.links.linkedin} target="_blank" rel="noopener">LinkedIn</a>
@@ -354,8 +354,14 @@ function Contact() {
               <span className="resume-card-sub">RAG · LLMs · fine-tuning · evals</span>
               <span className="resume-card-arrow">→</span>
             </a>
-            <a className="resume-card" href="Resume - Gaming.html" target="_blank">
+            <a className="resume-card" href="Resume - Software.html" target="_blank">
               <span className="resume-card-kicker">02 / for</span>
+              <span className="resume-card-title">Software roles</span>
+              <span className="resume-card-sub">C++ · systems · full-stack · graphics</span>
+              <span className="resume-card-arrow">→</span>
+            </a>
+            <a className="resume-card" href="Resume - Gaming.html" target="_blank">
+              <span className="resume-card-kicker">03 / for</span>
               <span className="resume-card-title">Game dev roles</span>
               <span className="resume-card-sub">Engines · gameplay · graphics · shipped</span>
               <span className="resume-card-arrow">→</span>

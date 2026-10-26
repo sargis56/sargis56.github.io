@@ -159,7 +159,7 @@ a { color: inherit; text-decoration: none; }
   break-inside: avoid;
 }
 .proj-bar { background: var(--accent); border-radius: 2px; opacity: .85; }
-.proj-top { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.proj-top { display: flex; align-items: baseline; gap: 0 8px; flex-wrap: wrap; }
 .proj-name { font: 600 9.4pt var(--font-display); }
 .proj-tech {
   font: 500 7.2pt var(--font-mono); color: var(--fg-faint);
@@ -250,38 +250,38 @@ a { color: inherit; text-decoration: none; }
   .name { font-size: 26pt; }
   .roles { font-size: 8.6pt; margin-top: 3px; }
   .contact { font-size: 7.4pt; line-height: 1.5; }
-  .bio { margin-top: 9px; font-size: 8.4pt; max-width: 78ch; }
-  .stats { margin-top: 8px; padding: 7px 0; }
+  .bio { margin-top: 11px; font-size: 8.4pt; max-width: 78ch; }
+  .stats { margin-top: 11px; padding: 9px 0; }
   .stat-val { font-size: 12pt; }
   .stat-lbl { font-size: 6.4pt; }
-  .body { margin-top: 9px; gap: 20px; }
-  .col { gap: 9px; }
-  .sec-h { margin-bottom: 5px; }
+  .body { margin-top: 13px; gap: 20px; }
+  .col { gap: 18px; }
+  .sec-h { margin-bottom: 7px; }
   .sec-t { font-size: 11.5pt; }
-  .xp { gap: 4px; }
+  .xp { gap: 10px; }
   .xp-row { page-break-inside: avoid; }
   .xp-role { font-size: 8.7pt; }
   .xp-sum { font-size: 7.9pt; margin-top: 1px; line-height: 1.28; }
-  .xp-bullets { margin-top: 2px; gap: 0px; }
+  .xp-bullets { margin-top: 3px; gap: 1px; }
   .xp-bullets li { font-size: 7.7pt; line-height: 1.3; padding-left: 10px; }
   .xp-bullets li::before { top: 5px; width: 3px; height: 3px; }
-  .proj { gap: 5px; }
+  .proj { gap: 10px; }
   .proj-row { page-break-inside: avoid; }
   .proj-name { font-size: 8.9pt; }
   .proj-tech { font-size: 6.8pt; }
   .proj-tag { font-size: 8pt; }
   .proj-result { font-size: 7pt; margin-top: 1px; }
   .proj-more { font-size: 7.6pt; margin-top: 4px; }
-  .skills { gap: 6px; }
+  .skills { gap: 8px; }
   .sk-cat { font-size: 6.8pt; margin-bottom: 3px; }
   .chip { font-size: 6.6pt; padding: 2px 6px; }
-  .edu { gap: 5px; }
+  .edu { gap: 8px; }
   .edu-school { font-size: 8.6pt; }
   .edu-cred { font-size: 7.6pt; }
   .edu-note { font-size: 6.8pt; }
-  .certs { margin-top: 7px; padding-top: 6px; }
+  .certs { margin-top: 10px; padding-top: 8px; }
   .certs-h { font-size: 6.8pt; margin-bottom: 4px; }
-  .certs ul { gap: 3px; }
+  .certs ul { gap: 5px; }
   .certs .name { font-size: 7.7pt; line-height: 1.22; }
   .certs .src { font-size: 6.6pt; }
 }
@@ -330,7 +330,7 @@ const RESUME_TWEAKS = /*EDITMODE-BEGIN*/{
 
 const AI_LOCATION = "Santa Clara, CA · Flexible";
 
-const AI_BIO = "AI engineer and Master of Science in Artificial Intelligence candidate at Santa Clara University, with a builder's background in games and graphics. I shipped a production RAG chatbot to 5,000 users (Postgres + pgvector + GPT-4 tools), fine-tuned a Transformers classifier to 99% test accuracy, and have written rendering and gameplay engines from scratch in C++. I'm looking for AI roles where shipping matters: applied research, agentic systems, or tooling for ML teams.";
+const AI_BIO = "AI engineer and Master of Science in Artificial Intelligence candidate at Santa Clara University, with a builder's background in games and graphics. I shipped a production RAG chatbot to 5,000 users (Postgres + pgvector + GPT-4 tools), fine-tuned a Transformers classifier to 99% test accuracy, and have written rendering and gameplay engines from scratch in C++. I'm looking for a Summer 2027 AI internship or early-career role in applied research, agentic systems, or tooling for ML teams.";
 
 const AI_STATS = [
   { value: "5,000", label: "Active users on production RAG chatbot" },
